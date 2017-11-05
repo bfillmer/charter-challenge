@@ -1,14 +1,16 @@
 
-import {call} from 'redux-saga/effects'
+import {call, put} from 'redux-saga/effects'
 
 import {getRepos} from 'state/api/queries'
+
+import {ERROR_MESSAGE} from 'types'
+import {addMessage} from 'actions'
 
 // @TODO Update view to display errors.
 // @TODO Error reducer/messaging.
 // @TODO Repo reducer.
 export function * loadHome () {
   try {
-    yield console.log('Home Route')
     const response = yield call(getRepos)
     const {data} = response
     if (!data) {
@@ -16,6 +18,6 @@ export function * loadHome () {
     }
     yield console.log('Graphql Response', data)
   } catch (e) {
-    console.error(e)
+    yield put(addMessage(ERROR_MESSAGE, e.message))
   }
 }

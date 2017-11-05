@@ -3,13 +3,15 @@ import {injectGlobal} from 'styled-components'
 
 // Reusable definitions for colors, spacings, etc.
 export const theme = {
+  error: '#a00',
   white: '#f4f4f4',
   grays: {
     light: '#eee',
     medium: '#999',
     dark: '#333'
   },
-  bottomMargin: '1.5rem'
+  margin: '1.5rem',
+  padding: '1.5rem'
 }
 
 // Inject some global styles that are most likely to be coupled to theme variables.
