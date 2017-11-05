@@ -1,9 +1,18 @@
 
-# Greenfield
+# Charter Challenge
 
-Opinionated application organization and libraries for bootstrapping new React-based applications.
+Basic Charter challenge found at (https://github.com/d3r1v3d/charter-dynexp-challenge). Recreated the core graphql connectivity in my own way with sagas, leveraging my own boilerplate to get started.
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was bootstrapped with [Greenfield](https://github.com/bfillmer/greenfield).
+
+## Requred Modifications to Run
+
+In order to get the application up and running you will need to create a `.env.local` file within the root directory with the following variables:
+
+```bash
+REACT_APP_PAT= # Personal access token with read access to the user's repositories.
+REACT_APP_USER= # Username whose repositories we would like to view.
+```
 
 ## Commands
 
