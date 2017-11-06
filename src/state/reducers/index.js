@@ -3,9 +3,12 @@ import {combineReducers} from 'redux'
 
 import {reducer as location} from 'state/routes'
 
-import {reducer as messages} from 'state/reducers/messages'
+import {messages} from 'state/reducers/messages'
+import {repos, repoCount} from 'state/reducers/repos'
 
 export const reducers = combineReducers({
   location,
-  messages
+  messages,
+  repos,
+  repoCount
 })

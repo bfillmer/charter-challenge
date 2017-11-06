@@ -14,8 +14,12 @@ const GET_GITHUB_REPOS = gql`
     user(login: "${REACT_APP_USER}") {
       login
       repositories(first: 25) {
+      totalCount,
         nodes {
-          name
+          url,
+          name,
+          description,
+          createdAt,
         }
       }
     }
