@@ -11,5 +11,5 @@ export const addMessage = createAction(types.ADDED_MESSAGE, (id, text) => ({id, 
 export const removeMessage = createAction(types.REMOVED_MESSAGE, id => ({id}))
 
 // REPOS
-export const addRepo = createAction(types.ADDED_REPO)
+export const hydrateRepos = createAction(types.HYDRATED_REPOS)
 export const setRepoCount = createAction(types.SET_REPO_COUNT)

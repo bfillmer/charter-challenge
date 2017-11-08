@@ -4,7 +4,7 @@ import {call, put} from 'redux-saga/effects'
 import {getRepos} from 'state/api/queries'
 
 import {ERROR_MESSAGE} from 'types'
-import {addMessage, addRepo, setRepoCount} from 'actions'
+import {addMessage, hydrateRepos, setRepoCount} from 'actions'
 
 const extractRepos = data => data && data.user && data.user.repositories
 
@@ -22,12 +22,7 @@ export function * loadHome () {
     // Massage data, store in our redux store.
     const {nodes, totalCount} = yield call(extractRepos, data)
     yield put(setRepoCount(totalCount))
-    // Still on the fence about the iteration and individual adding of repos to the store
-    // versus setting up a single hydrate action to just push everything in. On the one hand
-    // we would have to iterate to create our data structures anyway, so having actions fire
-    // is actually "good" in that we see that iteration, instead of doing the iteration in JS
-    // first then only see one action.
-    yield console.log('Repos', nodes)
+    yield put(hydrateRepos(nodes))
   } catch (e) {
     yield put(addMessage(ERROR_MESSAGE, e.message))
   }

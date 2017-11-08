@@ -9,7 +9,7 @@ export const ADDED_MESSAGE = 'messages/ADDED_MESSAGE'
 export const REMOVED_MESSAGE = 'messages/REMOVED_MESSAGE'
 
 // REPOS
-export const ADDED_REPO = 'repos/ADDED_REPO'
+export const HYDRATED_REPOS = 'repos/HYDRATED_REPOS'
 export const SET_REPO_COUNT = 'repos/SET_REPO_COUNT'
 
 /* === MESSAGE TYPES === */
